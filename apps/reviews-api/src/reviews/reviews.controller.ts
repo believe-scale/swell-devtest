@@ -6,6 +6,7 @@ import { ReviewsCountResponse, ReviewsResponse } from './reviews.types';
 export class ReviewsController {
 	constructor(private reviewsService: ReviewsService) {}
 
+	// NOTE: keeping error/exception handling at the service layer instead of the controller/pass-through layer
 	@Get()
 	async getReviews(): Promise<ReviewsResponse> {
 		const reviews = await this.reviewsService.getReviews();
