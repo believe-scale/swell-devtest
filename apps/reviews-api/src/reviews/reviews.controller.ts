@@ -8,7 +8,11 @@ export class ReviewsController {
 
 	@Get()
 	async getReviews(): Promise<ReviewsResponse> {
-		throw new NotFoundException('Not implemented');
+		// raise exception
+
+		const reviews = await this.reviewsService.getReviews();
+
+		return { reviews };
 	}
 
 	@Get('/count')
